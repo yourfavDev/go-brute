@@ -99,14 +99,6 @@ func readLines(path string) ([]string, error) {
 	file.Close()
 	return lines, scanner.Err()
 }
-func contains(s []string, e string) bool {
-	for _, a := range s {
-		if a == e {
-			return true
-		}
-	}
-	return false
-}
 
 func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGroup) {
 	i, _ := strconv.Atoi(timeouts)
