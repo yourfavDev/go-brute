@@ -38,8 +38,8 @@ You can contribute to this project via Github !
 ----
 
 ## Open source licensing info
-2. [LICENSE](LICENSE)
-3. [CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
+[LICENSE](LICENSE)
+[CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
 
 
 ----
