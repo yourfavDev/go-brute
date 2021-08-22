@@ -14,7 +14,7 @@ go build main.go
 
 ----
 
-# Golang SSH Bruteforcer
+# The Advanced Golang SSH Bruteforcer
 
 **Description**:  This open-sourced brute-forcer. Our goal is to create an efficient and reliable tool for pen-testers
 # This may only be used for EDUCATIONAL PURPOSES ONLY ! 
