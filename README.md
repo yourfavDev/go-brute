@@ -7,6 +7,7 @@ To install all of the template files, run the following commands from the root o
 ```
 git clone https://github.com/yourfavDev/go-brute
 cd go-brute
+set GOOS=<Your desired platform (Read the wiki)>
 go build main.go
 ```
 
