@@ -1,5 +1,5 @@
 package main
-d
+
 import (
 	"bufio"
 	"bytes"
