@@ -40,8 +40,8 @@ You can contribute to this project via Github !
 ----
 
 ## Open source licensing info
-##[LICENSE](LICENSE)
-##[CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
+1.[Apache 2.0 LICENSE](LICENSE)
+2.[CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
 
 
 ----
