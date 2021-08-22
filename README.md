@@ -16,7 +16,8 @@ go build main.go
 
 # Golang SSH Bruteforcer
 
-**Description**:  This open-sourced brute-forcer may only be used for EDUCATIONAL PURPOSES ONLY !
+**Description**:  This open-sourced brute-forcer may only be used for ***EDUCATIONAL PURPOSES ONLY ! 
+I am not responsible for any prohibited use of this software or any redistributed modified version of this software !***
 
 
 ## Dependencies
