@@ -40,7 +40,10 @@ You can contribute to this project via Github !
 ----
 
 ## Open source licensing info
-1.[Apache 2.0 LICENSE](LICENSE)\n
+1.[Apache 2.0 LICENSE](LICENSE)
+```
+Anyone is allowed to create their own version unless they change the **Licensing and warning** found in main.go at the line 65 in the source code available on GitHub (https://github.com/yourfavDev/go-brute)
+```
 2.[CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
 
 
