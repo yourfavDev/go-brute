@@ -16,7 +16,8 @@ go build main.go
 
 # Golang SSH Bruteforcer
 
-**Description**:  This open-sourced brute-forcer may only be used for ***EDUCATIONAL PURPOSES ONLY ! 
+**Description**:  This open-sourced brute-forcer. Our goal is to create an efficient and reliable tool for pen-testers
+***This may only be used for EDUCATIONAL PURPOSES ONLY ! 
 I am not responsible for any prohibited use of this software or any redistributed modified version of this software !***
 
 
