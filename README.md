@@ -26,10 +26,6 @@ In order for this code base to compile you will need to run this command in your
 ```
 go get golang.org/x/crypto/ssh
 ```
-## How to test the software
-
-If the software includes automated tests, detail how to run those tests.
-
 ## Known issues
 
 There are no known issues yet !
