@@ -5,8 +5,6 @@
 To install all of the template files, run the following commands from the root of your project's directory:
 
 ```
-apt update
-apt install git -y
 git clone https://github.com/yourfavDev/go-brute
 cd go-brute
 go build main.go
