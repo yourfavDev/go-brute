@@ -76,7 +76,8 @@ func main() {
 				xc = true
 				go tryHost(combo[i][0], ips[ix], combo[i][1], "uname -a", &wg)
 				if xc == false {
-					wg.Wait()
+					i, _ := strconv.Atoi(timeouts)
+					time.Sleep(time.Duration(i) * time.Second)
 				}
 			}
 		}
