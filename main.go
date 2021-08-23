@@ -27,7 +27,7 @@ var (
 
 func init() {
 	if len(os.Args) <= 4 {
-		fmt.Println("[INFO] Syntax: ./brute [ Port ] [ Routines ] [ IP File ] [ Timeout ]")
+		fmt.Println("[INFO] Syntax: ./brute [ Port ] [ Threads ] [ IP File ] [ Timeout ]")
 		os.Exit(1)
 	} else {
 		ipfile = os.Args[3]
