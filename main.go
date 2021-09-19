@@ -63,7 +63,7 @@ func main() {
 	}
 
 	//Licensing and warning
-	fmt.Printf("\n\t\t\033[31mWARNING\033[0m\n\033[36mThis binary is licensed under the Apache License 2.0\nThis binary is only intended for educational purposes only !\nYou can contribute to the project on https://github.com/yourfavDev/go-brute\n\n\033[0m")
+	fmt.Printf("\n\t\t\033- [31mWARNING\033[0m\n\033[36mThis binary is licensed under the Apache License 2.0\nThis binary is only intended for educational purposes only !\nYou can contribute to the project on https://github.com/yourfavDev/go-brute\n\n\033[0m")
 
 	for i, _ := range combo {
 		if len(combo[i]) < 2 {
