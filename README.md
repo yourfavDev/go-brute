@@ -22,7 +22,7 @@ go build main.go
 
 ## Dependencies
 
-In order for this code base to compile you will need to run this command in your root directory, it contains the basic SSH package of Go:
+In order for this code base to compile you will need to run this command in your root directory, it contains the basic SSH package for Go:
 
 ```
 go get golang.org/x/crypto/ssh
