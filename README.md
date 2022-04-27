@@ -1,4 +1,4 @@
-
+[![Go](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml/badge.svg)](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml)
 
 ## Installation
 
