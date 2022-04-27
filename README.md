@@ -1,5 +1,5 @@
-[![Go](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml/badge.svg)](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml)
-
+[![Tests](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml/badge.svg)](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml)
+[![CodeQL](https://github.com/yourfavDev/go-brute/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/yourfavDev/go-brute/actions/workflows/codeql-analysis.yml)
 ## Installation
 
 To install all of the template files, run the following commands from the root of your project's directory:
