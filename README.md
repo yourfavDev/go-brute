@@ -1,51 +1,30 @@
-[![Tests](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml/badge.svg)](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml)
+ [![Tests](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml/badge.svg)](https://github.com/yourfavDev/go-brute/actions/workflows/go.yml)
 [![CodeQL](https://github.com/yourfavDev/go-brute/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/yourfavDev/go-brute/actions/workflows/codeql-analysis.yml)
+###### Anyone is allowed to create their own version unless they do not change the '**Licensing and warning**' found in   the source code available on GitHub (https://github.com/yourfavDev/go-brute)
+This is an open-sourced brute-forcer made for the community. Our goal is to create an efficient and reliable tool for pen-testers
+
 ## Installation
 
-To install all of the template files, run the following commands from the root of your project's directory:
+When installing we highly recommend compiling the code yourself rather than using an outdated release, you can compile the code using this quick compile guide:
 
-```
+```bash
 git clone https://github.com/yourfavDev/go-brute
 cd go-brute
 set GOOS=<Your desired platform (Read the wiki)>
 go build main.go
 ```
 
-----
+## Usage
+Passfile format: user password
+#### The password / user list must be located inside a file called 'pass' in the same directory with the binary
+![alt text](https://github.com/yourfavDev/go-brute/blob/main/carbon.png)
 
-# The Advanced Golang SSH Bruteforcer
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-**Description**:  This is an open-sourced brute-forcer made for the community. Our goal is to create an efficient and reliable tool for pen-testers
-# This may only be used for EDUCATIONAL PURPOSES ONLY ! 
-***I am not responsible for any prohibited use of this software or any redistributed modified version of this software !***
+Please make sure to update tests as appropriate.
 
-
-## Dependencies
-
-In order for this code base to compile you will need to run this command in your root directory, it contains the basic SSH package for Go:
-
-```
-go get golang.org/x/crypto/ssh
-```
-## Known issues
-
-There are no known issues yet !
-
-
-## Getting involved
-
-You can contribute to this project via Github !
-
-----
-
-## Open source licensing info
-1.[Apache 2.0 LICENSE](LICENSE)
-----
-Anyone is allowed to create their own version unless they do not change the '**Licensing and warning**' 
-found in main.go at the line 65 in the source code available on GitHub (https://github.com/yourfavDev/go-brute)
-----
-
-2.[CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
-
-
-----
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+[Apache 2.0 LICENSE](LICENSE)
+[CFPB Source Code Policy](https://github.com/cfpb/source-code-policy/)
