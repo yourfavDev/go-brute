@@ -10,7 +10,6 @@ When installing we highly recommend compiling the code yourself rather than usin
 ```bash
 git clone https://github.com/yourfavDev/go-brute
 cd go-brute
-set GOOS=<Your desired platform (Read the wiki)>
 go build main.go
 ```
 
