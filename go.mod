@@ -1,7 +1,7 @@
 module github.com/yourfavDev/go-brute
 
-go 1.18
+go 1.24.0
 
-require golang.org/x/crypto v0.31.0
+require golang.org/x/crypto v0.45.0
 
-require golang.org/x/sys v0.28.0 // indirect
+require golang.org/x/sys v0.38.0 // indirect
